@@ -9,9 +9,9 @@ module('Unit | Model | beverage', function (hooks) {
     let beverage = store.createRecord('beverage', {
       id: 'GR1',
       name: 'Green tea',
-      price: 3.11
+      price: 3.11,
     });
-    
+
     assert.equal(beverage.name, 'Green tea');
     assert.equal(beverage.price, 3.11);
   });

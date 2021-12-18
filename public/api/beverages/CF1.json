@@ -1,6 +1,7 @@
 {
   "data": {
     "id": "CF1",
+    "type": "beverages",
     "attributes": {
       "name": "Coffee",
       "price": "11.23",

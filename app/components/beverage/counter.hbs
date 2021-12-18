@@ -1,0 +1,4 @@
+<button type="button" class="button"  disabled={{this.equalsZero}} {{on "click" (fn this.change -1)}}>-1</button>
+<p class="counter">{{this.count}} and {{@quantity}}</p>
+<button type="button" class="button" {{on "click" (fn this.change 1)}}>+1</button>
+

@@ -10,10 +10,13 @@ module('Unit | Model | beverage', function (hooks) {
       id: 'GR1',
       name: 'Green tea',
       price: 3.11,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Small_cup_of_green_tea.jpg'
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/f/fe/Small_cup_of_green_tea.jpg',
+      quantity: 2,
     });
 
     assert.equal(beverage.name, 'Green tea');
     assert.equal(beverage.price, 3.11);
+    assert.equal(beverage.quantity, 2);
   });
 });

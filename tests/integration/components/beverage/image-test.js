@@ -7,7 +7,6 @@ module('Integration | Component | beverage/image', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders the given image', async function (assert) {
-    
     await render(hbs`
       <Beverage::Image
       src="/assets/images/green-tea.png"
@@ -15,9 +14,10 @@ module('Integration | Component | beverage/image', function (hooks) {
       />
     `);
 
-    assert.dom('.image img')
-    .exists()
-    .hasAttribute('src', '/assets/images/green-tea.png')
-    .hasAttribute('alt', 'Green Tea');
+    assert
+      .dom('.image img')
+      .exists()
+      .hasAttribute('src', '/assets/images/green-tea.png')
+      .hasAttribute('alt', 'Green Tea');
   });
 });

@@ -11,8 +11,9 @@ module('Integration | Component | beverage', function (hooks) {
       beverage: {
         name: 'Green Tea',
         price: 3.11,
-        image: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Small_cup_of_green_tea.jpg'
-      }
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/f/fe/Small_cup_of_green_tea.jpg',
+      },
     });
 
     await render(hbs`<Beverage @beverage={{this.beverage}} />`);

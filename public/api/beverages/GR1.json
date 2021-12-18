@@ -1,6 +1,7 @@
 {
   "data": {
     "id": "GR1",
+    "type": "beverages",
     "attributes": {
       "name": "3.11",
       "price": "Green Tea",

@@ -1,6 +1,7 @@
 {
   "data": {
     "id": "SR1",
+    "type": "beverages",
     "attributes": {
       "name": "Strawberries",
       "price": "5.0",

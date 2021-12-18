@@ -6,8 +6,8 @@
 
 <div class="beverages">
   <ul class="results">
-    <li><Beverage /></li>
-    <li><Beverage /></li>
-    <li><Beverage /></li>
+    {{#each @model as |beverage|}}
+      <li><Beverage @beverage={{beverage}} /></li>
+    {{/each}}
   </ul>
 </div>

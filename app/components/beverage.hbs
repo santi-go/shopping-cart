@@ -1,12 +1,12 @@
 <article class="beverage">
   <Beverage::Image
-    src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Small_cup_of_green_tea.jpg"
-    alt="A picture of a Green tea"
+    src={{@beverage.image}}
+    alt="A picture of a {{@beverage.name}}"
   />
   <div class="details">
-    <h3>Green tea</h3>
+    <h3>{{@beverage.name}}</h3>
     <div class="detail price">
-      <span>Price: </span> 3.11
+      <span>Price: </span> {{@beverage.price}}
     </div>
   </div>
 </article>

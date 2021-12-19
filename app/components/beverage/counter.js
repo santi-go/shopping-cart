@@ -10,6 +10,6 @@ export default class BeverageCounterComponent extends Component {
   change(amount) {
     this.count = this.count + amount;
     this.count == 0 ?  this.equalsZero = true : this.equalsZero = false
-    this.args.quantity = this.count;
+    this.args.updateQuantity(this.count);
   }
 }

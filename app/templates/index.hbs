@@ -1,13 +1,18 @@
-<Jumbo>
-  <h2>Beverages Placeholder</h2>
-  <p>text place holder</p>
-  <LinkTo @route="cart" class="button">Go to Cart</LinkTo>
-</Jumbo>
+<main class="container mt-5">
+  <Jumbo>
+    <h2>Beverages Placeholder</h2>
+    <p>text place holder</p>
+    <LinkTo @route="item" @model="1">Product 1</LinkTo>
+  <LinkTo @route="item" @model="2">Product 2</LinkTo>
+  </Jumbo>
 
-<div class="beverages">
-  <ul class="results">
-    {{#each @model as |beverage|}}
-      <li><Beverage @beverage={{beverage}} /></li>
-    {{/each}}
-  </ul>
-</div>
+  <div class="beverages">
+    <ul class="results">
+      {{#each @model as |beverage|}}
+      <li>
+        <Beverage @beverage={{beverage}} />
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</main>

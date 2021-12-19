@@ -4,9 +4,9 @@ export default class BeverageModel extends Model {
   @attr name;
   @attr price;
   @attr image;
-  @attr quantity;
+  @attr('number', { defaultValue: 0 }) quantity;
 
-  set updateQuantity(quantity) {
+  updateQuantity(quantity) {
     this.quantity = quantity;
   }
 }

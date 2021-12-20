@@ -6,13 +6,13 @@ export default class currency extends Helper {
     const {
       sign = '£'
     } = hash;
-    const punds = Math.floor(number);
+    const pounds = Math.floor(number);
     let cents = Math.floor(number * 100 % 100);
 
     if (cents.toString().length === 1) {
       cents = '0' + cents;
     }
 
-    return `${sign}${punds}.${cents}`;
+    return `${sign}${pounds}.${cents}`;
   }
 }

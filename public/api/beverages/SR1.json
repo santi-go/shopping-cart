@@ -4,7 +4,7 @@
     "type": "beverages",
     "attributes": {
       "name": "Strawberries",
-      "price": "5.0",
+      "price": 5.0,
       "image": "https://veggiedesserts.com/wp-content/uploads/2021/08/strawberry-iced-tea-2-1-1024x1536.jpg"
     }
   }

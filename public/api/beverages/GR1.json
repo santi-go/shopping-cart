@@ -3,8 +3,8 @@
     "id": "GR1",
     "type": "beverages",
     "attributes": {
-      "name": "3.11",
-      "price": "Green Tea",
+      "name": "Green Tea",
+      "price": 3.11,
       "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Small_cup_of_green_tea.jpg"
     }
   }

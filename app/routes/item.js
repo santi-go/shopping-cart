@@ -1,10 +1,10 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-export default class BeverageRoute extends Route {
+export default class ItemRoute extends Route {
   @service store;
 
   async model(params) {
-    return this.store.findRecord('beverage', params.beverage_id);
+    return this.store.findRecord('beverage', params.item_id);
   }
 }

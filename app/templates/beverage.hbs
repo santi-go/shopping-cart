@@ -1,5 +1,4 @@
-<LinkTo @route="beverage" @model={{ @beverage.id}} class="product">
-  <article class="beverage">
+<article class="beverage">
     <Beverage::Image 
       src={{@beverage.image}} 
       alt="A picture of a {{@beverage.name}}" 
@@ -9,4 +8,3 @@
       @price={{currency @beverage.price}}
     />
   </article>
-</LinkTo>

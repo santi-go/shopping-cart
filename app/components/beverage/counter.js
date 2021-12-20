@@ -9,7 +9,7 @@ export default class BeverageCounterComponent extends Component {
   @action
   change(amount) {
     this.count = this.count + amount;
-    this.count == 0 ?  this.equalsZero = true : this.equalsZero = false
+    this.count == 0 ? (this.equalsZero = true) : (this.equalsZero = false);
     this.args.updateQuantity(this.count);
   }
 }

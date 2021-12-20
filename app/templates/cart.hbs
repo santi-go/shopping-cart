@@ -9,12 +9,12 @@
         <h4>{{item.name}}</h4>
         <i class="font-weight-bold">{{currency item.price}}</i>
       </div>
-      {{!-- <input
+      <input
         type="number"
         class="ml-auto"
         value={{item.count}}
         {{on "input" (fn this.updateItemCount item)}}
-      > --}}
+      >
     </div>
   {{/each}}
   <section class="w-50 ml-auto text-right mb-5">

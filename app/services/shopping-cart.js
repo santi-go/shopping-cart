@@ -6,5 +6,6 @@ export default class ShoppingCartService extends Service {
 
   addItem(item) {
     this.itemList = [...this.itemList, item];
+    console.log(item);
   }
 }

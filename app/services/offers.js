@@ -90,7 +90,7 @@ export default class OffersService extends Service {
   addGreenTeaDiscount(item) {
     greenTeaCount = item.count;
     if (this.isCountEven(item)) {
-      return parseFloat(item.price);
+      return item.price;
     } else {
       return 0;
     }
@@ -100,7 +100,7 @@ export default class OffersService extends Service {
     greenTeaCount = item.count;
 
     if (!this.isCountEven(item)) {
-      return -parseFloat(item.price);
+      return -item.price;
     } else {
       return 0;
     }

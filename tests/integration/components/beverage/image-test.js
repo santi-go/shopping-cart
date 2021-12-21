@@ -15,7 +15,7 @@ module('Integration | Component | beverage/image', function (hooks) {
     `);
 
     assert
-      .dom('.image img')
+      .dom('.beverage-image img')
       .exists()
       .hasAttribute('src', '/assets/images/green-tea.png')
       .hasAttribute('alt', 'Green Tea');

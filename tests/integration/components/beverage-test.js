@@ -12,15 +12,15 @@ module('Integration | Component | beverage', function (hooks) {
         name: 'Green Tea',
         price: 3.11,
         image:
-          'https://upload.wikimedia.org/wikipedia/commons/f/fe/Small_cup_of_green_tea.jpg',
+          '/assets/images/green-tea.png',
       },
     });
 
     await render(hbs`<Beverage @beverage={{this.beverage}} />`);
 
-    assert.dom('article').hasClass('beverage');
-    assert.dom('article h3').hasText('Green Tea');
-    assert.dom('article .detail.price').includesText('3.11');
-    assert.dom('article .image').exists();
+    assert.dom('div').hasClass('beverage');
+    assert.dom('h3').hasText('Green Tea');
+    assert.dom('.detail.price').includesText('3.11');
+    assert.dom('img').exists().hasAttribute('src', '/assets/images/green-tea.png');
   });
 });

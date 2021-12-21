@@ -5,7 +5,7 @@ import { setupApplicationTest } from 'ember-qunit';
 module('Acceptance | shopping cart', function (hooks) {
   setupApplicationTest(hooks);
 
-  test('visiting /', async function (assert) {
+  test('adding to cart and visiting /shopping-cart', async function (assert) {
     await visit('/');
 
     assert.equal(currentURL(), '/');
@@ -14,10 +14,12 @@ module('Acceptance | shopping cart', function (hooks) {
     assert.dom('.add-to-cart').hasText('Add to cart');
     await click('.add-to-cart');
 
+    assert.dom('nav .cart-count').hasText('1');
+
     assert.equal(currentURL(), '/shopping-cart');
   });
 
-  test('visiting /shopping-cart', async function (assert) {
+  test('visiting /', async function (assert) {
     await visit('/shopping-cart');
 
     assert.equal(currentURL(), '/shopping-cart');
@@ -27,6 +29,17 @@ module('Acceptance | shopping cart', function (hooks) {
     await click('a.menu-index h1');
 
     assert.equal(currentURL(), '/');
+  });
+
+  test('visiting /checkout', async function (assert) {
+    await visit('/shopping-cart');
+
+    assert.equal(currentURL(), '/shopping-cart');
+    
+    assert.dom('button.btn.btn-success').hasText('Check out');
+    await click('button.btn.btn-success');
+
+    assert.equal(currentURL(), '/checkout');
   });
 
   test('navigating using the nav-bar', async function (assert) {

@@ -62,11 +62,9 @@ export default class OffersService extends Service {
     }
   }
 
-  addStrawberriesDiscount(item) { //arreglar nos para todas.
+  addStrawberriesDiscount(item) { 
     strawberriesCount = item.count;
-    if(item.count == 3) {
-      return 1.50;
-    } else if (item.count > 3) {
+    if (item.count >= 3) {
       return 0.50
     } else {
       return 0;
@@ -75,9 +73,7 @@ export default class OffersService extends Service {
 
   substractStrawberriesDiscount(item) {
     strawberriesCount = item.count;
-    if(item.count == 2) {
-      return - 1.50;
-    } else if (item.count >= 3) {
+    if (item.count > 1) {
       return - 0.50
     } else {
       return 0;

@@ -10,13 +10,13 @@ module('Acceptance | shopping cart', function (hooks) {
 
     assert.equal(currentURL(), '/');
     assert.dom('nav').exists();
-  //   assert.dom('h1').hasText('Beverages');
-  //   assert.dom('h2').hasText('Beverages Placeholder');
+    //   assert.dom('h1').hasText('Beverages');
+    //   assert.dom('h2').hasText('Beverages Placeholder');
 
-  //   // assert.dom('.jumbo a.button').hasText('Go to Cart');
-  //   // await click('.jumbo a.button');
+    //   // assert.dom('.jumbo a.button').hasText('Go to Cart');
+    //   // await click('.jumbo a.button');
 
-  //   assert.equal(currentURL(), '/cart');
+    //   assert.equal(currentURL(), '/cart');
   });
 
   test('visiting /cart', async function (assert) {

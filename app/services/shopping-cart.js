@@ -27,10 +27,13 @@ export default class ShoppingCartService extends Service {
     if (existingItem) {
       existingItem.count += 1;
     } else {
-      this.itemList = [...this.itemList, new Item ({
-        ...item,
-        count: 1,
-      })];
+      this.itemList = [
+        ...this.itemList,
+        new Item({
+          ...item,
+          count: 1,
+        }),
+      ];
     }
   }
 }

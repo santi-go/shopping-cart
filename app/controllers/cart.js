@@ -5,7 +5,7 @@ import { tracked } from '@glimmer/tracking';
 
 export default class CartController extends Controller {
   @service('shopping-cart') cart;
-  @service offers
+  @service offers;
   @tracked itemsDiscount = 0;
 
   get subtotal() {
@@ -25,7 +25,7 @@ export default class CartController extends Controller {
   @action
   updateItemCount(item, event) {
     item.count = parseInt(event.target.value);
-    this.itemsDiscount += this.offers.getOffer(item)
+    this.itemsDiscount += this.offers.getOffer(item);
     if (item.count === 0) {
       this.cart.remove(item);
     }
@@ -34,5 +34,11 @@ export default class CartController extends Controller {
   @action
   removeItem(item) {
     this.cart.remove(item);
+  }
+
+  @action
+  removeAll() {
+    this.cart.removeAll();
+    this.itemsDiscount = 0;
   }
 }

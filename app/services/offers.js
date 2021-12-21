@@ -3,19 +3,18 @@ import Service from '@ember/service';
 let greenTeaCount = 0;
 let strawberriesCount = 0;
 let coffeeCount = 0;
-    
+
 export default class OffersService extends Service {
-  
   getOffer(item) {
-    if(item.id == 'GR1') {
+    if (item.id == 'GR1') {
       return this.greenTeaOffer(item);
     }
 
-    if(item.id == 'SR1') {
+    if (item.id == 'SR1') {
       return this.strawberriesOffer(item);
     }
 
-    if(item.id == 'CF1') {
+    if (item.id == 'CF1') {
       return this.coffeeOffer(item);
     }
   }
@@ -25,29 +24,29 @@ export default class OffersService extends Service {
       return this.addCoffeeDiscount(item);
     } else {
       return this.substractCoffeeDiscount(item);
-    } 
+    }
   }
 
   addCoffeeDiscount(item) {
     coffeeCount = item.count;
-    if(item.count == 3) {
+    if (item.count == 3) {
       return this.caculateCoffeDiscount(item) * 3;
     } else if (item.count > 3) {
       return this.caculateCoffeDiscount(item);
     } else {
       return 0;
-    }  
+    }
   }
 
   substractCoffeeDiscount(item) {
     coffeeCount = item.count;
-    if(item.count == 2) {
-      return - this.caculateCoffeDiscount(item) * 3;
+    if (item.count == 2) {
+      return -this.caculateCoffeDiscount(item) * 3;
     } else if (item.count >= 3) {
-      return - this.caculateCoffeDiscount(item);
+      return -this.caculateCoffeDiscount(item);
     } else {
       return 0;
-    }   
+    }
   }
 
   caculateCoffeDiscount(item) {
@@ -62,26 +61,26 @@ export default class OffersService extends Service {
     }
   }
 
-  addStrawberriesDiscount(item) { 
+  addStrawberriesDiscount(item) {
     strawberriesCount = item.count;
     if (item.count >= 3) {
-      return 0.50
+      return 0.5;
     } else {
       return 0;
-    }  
+    }
   }
 
   substractStrawberriesDiscount(item) {
     strawberriesCount = item.count;
     if (item.count > 1) {
-      return - 0.50
+      return -0.5;
     } else {
       return 0;
-    }  
+    }
   }
-  
+
   greenTeaOffer(item) {
-    if(greenTeaCount < item.count) {
+    if (greenTeaCount < item.count) {
       return this.addGreenTeaDiscount(item);
     } else {
       return this.substractGreenTeaDiscount(item);
@@ -90,7 +89,7 @@ export default class OffersService extends Service {
 
   addGreenTeaDiscount(item) {
     greenTeaCount = item.count;
-    if(this.isCountEven(item)) {
+    if (this.isCountEven(item)) {
       return parseFloat(item.price);
     } else {
       return 0;
@@ -99,9 +98,9 @@ export default class OffersService extends Service {
 
   substractGreenTeaDiscount(item) {
     greenTeaCount = item.count;
-    
-    if(!this.isCountEven(item)) {
-      return - parseFloat(item.price);
+
+    if (!this.isCountEven(item)) {
+      return -parseFloat(item.price);
     } else {
       return 0;
     }

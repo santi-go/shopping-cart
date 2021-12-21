@@ -17,7 +17,7 @@ export default class ShoppingCartService extends Service {
   @tracked itemList = [];
 
   addItem(item) {
-    const existingItem = this.itemList.find(cartItem => {
+    const existingItem = this.itemList.find((cartItem) => {
       return cartItem.id === item.id;
     });
 
@@ -26,13 +26,8 @@ export default class ShoppingCartService extends Service {
     } else {
       this.itemList = [
         ...this.itemList,
-        new Item(
-          item.id,
-          item.name,
-          item.price,
-          item.image,
-          1,
-        )];
+        new Item(item.id, item.name, item.price, item.image, 1),
+      ];
     }
   }
 
@@ -41,5 +36,9 @@ export default class ShoppingCartService extends Service {
     const itemList = this.itemList;
     itemList.splice(index, 1);
     this.itemList = itemList;
+  }
+
+  removeAll() {
+    this.itemList = [];
   }
 }

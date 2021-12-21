@@ -32,7 +32,9 @@
     </div>
   </section>
 
-  <button type="button" class="btn btn-success float-right">
-    Check out
-  </button>
+  <LinkTo @route="checkout">
+    <button type="button" class="btn btn-success float-right" {{on "click" this.removeAll}}>
+      Check out
+    </button>
+  </LinkTo>
 </main>

@@ -25,9 +25,10 @@ body {
   ;
 }
 
-a {
-  color: #016aba;
+a,
+a:hover {
   text-decoration: none;
+  
 }
 
 li::marker {

@@ -7,11 +7,7 @@ export default class BeverageDetailsComponent extends Component {
 
   @action
   addToCart() {
-    const { name, image, price } = this.args;
-    this.cart.addItem({
-      name,
-      image,
-      price,
-    });
+    const { beverage } = this.args;
+    this.cart.addItem(beverage);
   }
 }

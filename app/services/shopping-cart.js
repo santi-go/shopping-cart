@@ -2,17 +2,14 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 class Item {
-  @tracked count;
+  @tracked count = 0;
 
-  name;
-  image;
-  price;
-
-  constructor(item) {
-    this.count = item.count;
-    this.name = item.name;
-    this.image = item.image;
-    this.price = item.price;
+  constructor(id, name, price, image, count) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.image = image;
+    this.count = count;
   }
 }
 
@@ -20,8 +17,8 @@ export default class ShoppingCartService extends Service {
   @tracked itemList = [];
 
   addItem(item) {
-    const existingItem = this.itemList.find(({ name }) => {
-      return name === item.name;
+    const existingItem = this.itemList.find(cartItem => {
+      return cartItem.id === item.id;
     });
 
     if (existingItem) {
@@ -29,11 +26,20 @@ export default class ShoppingCartService extends Service {
     } else {
       this.itemList = [
         ...this.itemList,
-        new Item({
-          ...item,
-          count: 1,
-        }),
-      ];
+        new Item(
+          item.id,
+          item.name,
+          item.price,
+          item.image,
+          1,
+        )];
     }
+  }
+
+  remove(item) {
+    const index = this.itemList.indexOf(item);
+    const itemList = this.itemList;
+    itemList.splice(index, 1);
+    this.itemList = itemList;
   }
 }

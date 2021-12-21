@@ -21,7 +21,14 @@ export default class CartController extends Controller {
 
   @action
   updateItemCount(item, event) {
-    const count = event.target.value;
-    (count >= 0) ? item.count = count : item.count = 0;
+    item.count = parseInt(event.target.value);
+    if (item.count === 0) {
+      this.cart.remove(item);
+    }
+  }
+
+  @action
+  removeItem(item) {
+    this.cart.remove(item);
   }
 }

@@ -10,38 +10,34 @@ module('Acceptance | shopping cart', function (hooks) {
 
     assert.equal(currentURL(), '/');
     assert.dom('nav').exists();
-    //   assert.dom('h1').hasText('Beverages');
-    //   assert.dom('h2').hasText('Beverages Placeholder');
+    
+    assert.dom('.add-to-cart').hasText('Add to cart');
+    await click('.add-to-cart');
 
-    //   // assert.dom('.jumbo a.button').hasText('Go to Cart');
-    //   // await click('.jumbo a.button');
-
-    //   assert.equal(currentURL(), '/cart');
+    assert.equal(currentURL(), '/shopping-cart');
   });
 
-  test('visiting /cart', async function (assert) {
-    await visit('/cart');
+  test('visiting /shopping-cart', async function (assert) {
+    await visit('/shopping-cart');
 
-    assert.equal(currentURL(), '/cart');
+    assert.equal(currentURL(), '/shopping-cart');
     assert.dom('nav').exists();
-    // assert.dom('h1').hasText('Beverages');
-    // assert.dom('h2').hasText('Cart Placeholder');
 
-    // assert.dom('.jumbo a.button').hasText('Go to Home');
-    // await click('.jumbo a.button');
+    assert.dom('a.menu-index h1').hasText('Beverages & Fruit');
+    await click('a.menu-index h1');
 
-    // assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/');
   });
 
   test('navigating using the nav-bar', async function (assert) {
     await visit('/');
 
     assert.dom('nav').exists();
-    assert.dom('nav a.menu-index').hasText('Beverages');
-    assert.dom('nav a.menu-cart').hasText('Cart');
+    assert.dom('nav a.menu-index h1').hasText('Beverages & Fruit');
+    assert.dom('nav a.cart-link').exists();
 
-    await click('nav a.menu-cart');
-    assert.equal(currentURL(), '/cart');
+    await click('nav a.cart-link');
+    assert.equal(currentURL(), '/shopping-cart');
 
     await click('nav a.menu-index');
     assert.equal(currentURL(), '/');

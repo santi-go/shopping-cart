@@ -1,9 +1,12 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class CartController extends Controller {
   @service('shopping-cart') cart;
+  @service offers
+  @tracked itemsDiscount = 0;
 
   get subtotal() {
     return this.cart.itemList.reduce((acc, item) => {
@@ -11,17 +14,18 @@ export default class CartController extends Controller {
     }, 0);
   }
 
-  get tax() {
-    return 0.09 * this.subtotal;
+  get discount() {
+    return this.itemsDiscount;
   }
 
   get total() {
-    return this.subtotal + this.tax;
+    return this.subtotal - this.discount;
   }
 
   @action
   updateItemCount(item, event) {
     item.count = parseInt(event.target.value);
+    this.itemsDiscount += this.offers.getOffer(item, item.count)
     if (item.count === 0) {
       this.cart.remove(item);
     }

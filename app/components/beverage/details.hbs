@@ -1,21 +1,20 @@
-<section>
-  <div class="details">
-    <h3>{{@name}}</h3>
-    <div class="detail price">
-      <span>Price: </span> {{currency @price}}
-    </div>
-  </div>
-</section>
-
-<section class="d-flex justify-content-between align-items-end">
-      <div>
-        <button
-          type="button"
-          class="btn btn-info"
-          {{on "click" this.addToCart}}
-        >
-          <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>
-          Add to cart
-        </button>
+<div class="beverage-details">
+  <section>
+    <div>
+      <h3>{{@name}}</h3>
+      <div class="detail price">
+        <span>Price: </span> {{currency @price}}
       </div>
-    </section>
+    </div>
+  </section>
+
+  <section class="d-flex justify-content-between align-items-end">
+    <div>
+      <button type="button" class="btn btn-info" {{on "click" this.addToCart}}>
+        <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>
+        Add to cart
+      </button>
+    </div>
+  </section>
+
+</div>

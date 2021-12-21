@@ -2,29 +2,29 @@
   "data": [
     {
       "id": "GR1",
-      "type": "beverages",
+      "type": "beverage",
       "attributes": {
         "name": "Green tea",
         "price": 3.11,
-        "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Small_cup_of_green_tea.jpg"
+        "image": "./assets/images/Small_cup_of_green_tea.jpg"
       }
     },
     {
       "id": "SR1",
-      "type": "beverages",
+      "type": "beverage",
       "attributes": {
         "name": "Strawberries",
         "price": 5.0,
-        "image": "https://veggiedesserts.com/wp-content/uploads/2021/08/strawberry-iced-tea-2-1-1024x1536.jpg"
+        "image": "./assets/images/Strawberry-Iced-Tea.jpg"
       }
     },
     {
       "id": "CF1",
-      "type": "beverages",
+      "type": "beverage",
       "attributes": {
         "name": "Coffee",
         "price": 11.23,
-        "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+        "image": "./assets/images/A_small_cup_of_coffee.jpg"
       }
     }
   ]

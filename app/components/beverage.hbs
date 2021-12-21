@@ -1,17 +1,15 @@
 <LinkTo 
   @route="item" 
   @model={{ @beverage.id }} 
-  class="product"
+  class="beverage"
 >
-  <article class="beverage">
-    <Beverage::Image 
-      src={{@beverage.image}} 
-      alt="A picture of a {{@beverage.name}}" 
-    />
-    <Beverage::Details 
-      @name={{@beverage.name}}
-      @image={{@beverage.image}}
-      @price={{@beverage.price}}
-    />
-  </article>
+  <Beverage::Image 
+    src={{@beverage.image}} 
+    alt="A picture of a {{@beverage.name}}" 
+  />
+  <Beverage::Details 
+    @name={{@beverage.name}}
+    @image={{@beverage.image}} 
+    @price={{@beverage.price}} 
+  />
 </LinkTo>

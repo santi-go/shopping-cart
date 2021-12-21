@@ -7,20 +7,17 @@ module('Integration | Component | beverage/details', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    this.set('beverage', {
+      name: "Green tea",
+      price: 3.11,
+      offer: "buy-one-get-one-free"
+    })
 
-    await render(hbs`<Beverage::Details />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      <Beverage::Details>
-        template block text
-      </Beverage::Details>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    await render(hbs`<Beverage::Details @beverage={{this.beverage}} />`);
+    assert.dom('h3').hasText('Green tea');
+    assert.dom('.detail.price').hasText('Price: £3.11');
+    assert.dom('.detail.offer').hasText('Offer: buy-one-get-one-free');
+    assert.dom('button.add-to-cart').hasText('Add to cart');
+    
   });
 });

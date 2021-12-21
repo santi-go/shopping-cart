@@ -6,7 +6,7 @@
       "name": "Strawberries",
       "price": 5.0,
       "image": "/assets/images/Strawberry-Iced-Tea.jpg",
-      "offer": "buy 3 or more, price = £4.50 each"
+      "offer": "buy 3 or more, price = £4.50 from third item up"
     }
   }
 }

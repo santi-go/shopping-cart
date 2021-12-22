@@ -11,8 +11,8 @@ module('Acceptance | shopping cart', function (hooks) {
     assert.equal(currentURL(), '/');
     assert.dom('nav').exists();
     
-    assert.dom('.add-to-cart').hasText('Add to cart');
-    await click('.add-to-cart');
+    assert.dom('.beverage-details button.add-to-cart').hasText('Add to cart');
+    await click('.beverage-details button.add-to-cart');
 
     assert.dom('nav .cart-count').hasText('1');
 

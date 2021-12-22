@@ -17,7 +17,5 @@ module('Integration | Component | beverage/details', function (hooks) {
     assert.dom('h3').hasText('Green tea');
     assert.dom('.detail.price').hasText('Price: £3.11');
     assert.dom('.detail.offer').hasText('Offer: buy-one-get-one-free');
-    assert.dom('button.add-to-cart').hasText('Add to cart');
-    
   });
 });

@@ -39,7 +39,6 @@ button {
 }
 
 p {
-  line-height: 1.5;
   margin-bottom: 15px;
 }
 
@@ -111,36 +110,4 @@ nav.menu {
 .body {
   padding: 15px;
   padding-bottom: 50px;
-}
-
-/**
- * Utilities
- */
-
-.light {
-  font-weight: 300;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.hidden {
-  display: none;
-}
-
-.relative {
-  position: relative;
-}
-
-.screen-reader{
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px; width: 1px;
-  margin: -1px; padding: 0; border: 0;
 }

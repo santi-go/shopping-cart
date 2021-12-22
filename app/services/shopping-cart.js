@@ -4,11 +4,12 @@ import { tracked } from '@glimmer/tracking';
 class Item {
   @tracked count = 0;
 
-  constructor(id, name, price, image, count) {
+  constructor(id, name, price, image, offer, count) {
     this.id = id;
     this.name = name;
     this.price = price;
     this.image = image;
+    this.offer = offer;
     this.count = count;
   }
 }
@@ -26,7 +27,7 @@ export default class ShoppingCartService extends Service {
     } else {
       this.itemList = [
         ...this.itemList,
-        new Item(item.id, item.name, item.price, item.image, 1),
+        new Item(item.id, item.name, item.price, item.image, item.offer, 1),
       ];
     }
   }

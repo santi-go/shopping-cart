@@ -3,7 +3,10 @@
     <ul class="results">
       {{#each @model as |beverage|}}
       <li>
-        <Beverage @beverage={{beverage}} />
+        <Beverage
+          @isIndex={{true}} 
+          @beverage={{beverage}} 
+        />
       </li>
       {{/each}}
     </ul>

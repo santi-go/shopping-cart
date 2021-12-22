@@ -14,7 +14,7 @@
       </div>
     </div>
   </section>
-
+  {{#if @isIndex}}
   <section class="d-flex justify-content-between align-items-end">
     <div>
       <button type="button" class="btn btn-info add-to-cart" {{on "click" this.addToCart}}>
@@ -23,5 +23,6 @@
       </button>
     </div>
   </section>
+  {{/if}}
 
 </div>

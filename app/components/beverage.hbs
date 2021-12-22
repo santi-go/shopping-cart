@@ -6,7 +6,8 @@
     src={{@beverage.image}} 
     alt="A picture of a {{@beverage.name}}" 
   />
-  <Beverage::Details 
+  <Beverage::Details
+    @isIndex={{@isIndex}} 
     @beverage={{@beverage}}
   />
   </div>

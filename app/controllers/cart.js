@@ -19,6 +19,9 @@ export default class CartController extends Controller {
   }
 
   get total() {
+    if(this.cart.itemList.length == 0){
+      return 0
+    } 
     return this.subtotal - this.discount;
   }
 

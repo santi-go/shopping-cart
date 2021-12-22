@@ -41,4 +41,15 @@ export default class CartController extends Controller {
     this.cart.removeAll();
     this.itemsDiscount = 0;
   }
+
+  @action
+  disableKeyInput() {
+    let collection = document.getElementsByClassName('ml-auto key-input');
+    let inputs = Array.from(collection);
+    inputs.forEach(input => {
+      input.addEventListener('keydown', (event) => {
+      event.preventDefault();
+      });
+    })
+  }
 }

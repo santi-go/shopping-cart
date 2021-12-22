@@ -6,19 +6,11 @@
         @beverage={{item}}
         @isIndex={{false}} 
       />
-      {{!-- <div class="cart-item-thumbnail">
-        <img src={{item.image}} alt="">
-      </div>
-      <div class="ml-3">
-        <h4>{{item.name}}</h4>
-        <i class="font-weight-bold">{{currency item.price}}</i>
-        <h4>{{item.offer}}</h4>
-      </div>
-       --}}
       <input
         type="number"
-        class="ml-auto"
+        class="ml-auto key-input"
         value={{item.count}}
+        {{on "focus" this.disableKeyInput}}
         {{on "input" (fn this.updateItemCount item)}}
       >
     </div>

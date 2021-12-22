@@ -15,14 +15,17 @@
     </div>
   </section>
   {{#if @isIndex}}
-  <section class="d-flex justify-content-between align-items-end">
-    <div>
-      <button type="button" class="btn btn-info add-to-cart" {{on "click" this.addToCart}}>
-        <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>
-        Add to cart
-      </button>
-    </div>
-  </section>
+  <LinkTo 
+  @route="cart" 
+  >
+    <section class="d-flex justify-content-between align-items-end">
+      <div>
+        <button type="button" class="btn btn-info add-to-cart" {{on "click" this.addToCart}}>
+          <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>
+          Add to cart
+        </button>
+      </div>
+    </section>
+  </LinkTo>
   {{/if}}
-
 </div>

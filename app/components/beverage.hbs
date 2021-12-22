@@ -1,14 +1,10 @@
-<LinkTo 
-  @route="cart" 
->
-  <div class="beverage">
-    <Beverage::Image 
-    src={{@beverage.image}} 
-    alt="A picture of a {{@beverage.name}}" 
+<div class="beverage">
+  <Beverage::Image 
+  src={{@beverage.image}} 
+  alt="A picture of a {{@beverage.name}}" 
   />
   <Beverage::Details
     @isIndex={{@isIndex}} 
     @beverage={{@beverage}}
   />
-  </div>
-</LinkTo>
+</div>
